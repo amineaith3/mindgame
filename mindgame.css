@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
 
 .ins,
 .contain_colors,
@@ -6,12 +11,6 @@
 .contain_numbers,
 .btn {
     text-align: center;
-}
-
-.btn {
-    width: 70px;
-    height: 30px;
-    background-color: rgb(164, 173, 173);
 }
 
 .ins {
@@ -28,20 +27,39 @@
     text-align: center;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+.clr-peachpuff {
+    color: peachpuff;
+    background-color: peachpuff;
+}
+
+.clr-yellow {
+    color: yellow;
+    background-color: rgba(255, 255, 0, 0.69);
+}
+
+.clr-green {
+    color: green;
+    background-color: green;
+}
+
+.clr-blue {
+    color: blue;
+    background-color: blue;
+}
+
+.clr-purple {
+    color: purple;
+    background-color: purple;
+}
+
+.clr-red {
+    color: red;
+    background-color: red;
 }
 
 .text_1,
 .text_2 {
     font-size: large;
-}
-
-footer {
-    text-align: center;
-    color: aliceblue;
 }
 
 .text_1 {
@@ -57,7 +75,11 @@ footer {
 
 .spans {
     background-color: black;
+}
 
+footer {
+    text-align: center;
+    color: aliceblue;
 }
 
 a:visited {
@@ -73,11 +95,16 @@ a:visited {
     background-color: antiquewhite;
 }
 
+.btn {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(164, 173, 173);
+}
+
 .enjoy {
     color: antiquewhite;
 }
 
 .ccg {
     color: blue;
-
 }
