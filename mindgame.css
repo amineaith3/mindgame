@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: black;
+    /*background-color: black;*/
 }
 
 .ins,
@@ -15,7 +15,7 @@
 
 .ins {
     padding-top: 3%;
-    color: white;
+    /*color: white;*/
     font-size: x-large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -28,32 +28,32 @@
 }
 
 .clr-peachpuff {
-    color: peachpuff;
+    color: black;
     background-color: peachpuff;
 }
 
 .clr-yellow {
-    color: yellow;
-    background-color: rgba(255, 255, 0, 0.69);
+    color: black;
+    background-color: yellow;
 }
 
 .clr-green {
-    color: green;
+    color: black;
     background-color: green;
 }
 
 .clr-blue {
-    color: blue;
+    color: black;
     background-color: blue;
 }
 
 .clr-purple {
-    color: purple;
+    color: black;
     background-color: purple;
 }
 
 .clr-red {
-    color: red;
+    color: black;
     background-color: red;
 }
 
@@ -65,16 +65,16 @@
 .text_1 {
     margin-left: 30%;
     margin-right: 30%;
-    color: white;
-    background-color: black;
+   /* color: white;
+    background-color: black;*/
 }
 
 .text_2 {
-    color: white;
+    /*color: white;*/
 }
 
 .spans {
-    background-color: black;
+    /*background-color: black;*/
 }
 
 footer {
@@ -92,7 +92,7 @@ a:visited {
     height: 15px;
     text-align: center;
     border-radius: 25%;
-    background-color: antiquewhite;
+    /*background-color: antiquewhite;*/
 }
 
 .btn {
@@ -102,7 +102,7 @@ a:visited {
 }
 
 .enjoy {
-    color: antiquewhite;
+    /*color: antiquewhite;*/
 }
 
 .ccg {
