@@ -3,7 +3,10 @@
     padding: 0;
     /*background-color: black;*/
 }
-
+html{
+    
+    background-color: rgb(172, 171, 170);
+}
 .ins,
 .contain_colors,
 .text_1,
@@ -56,6 +59,35 @@
     color: black;
     background-color: red;
 }
+.back-peachpuff {
+    color: peachpuff;
+    background-color: rgb(172, 171, 170);
+}
+
+.back-yellow {
+    color: yellow;
+    background-color: rgb(172, 171, 170);
+}
+
+.back-green {
+    color: green;
+    background-color: rgb(172, 171, 170);
+}
+
+.back-blue {
+    color: blue;
+    background-color: rgb(172, 171, 170);
+}
+
+.back-purple {
+    color: purple;
+    background-color: rgb(172, 171, 170);
+}
+
+.back-red {
+    color: red;
+    background-color: rgb(172, 171, 170);
+}
 
 .text_1,
 .text_2 {
@@ -65,21 +97,21 @@
 .text_1 {
     margin-left: 30%;
     margin-right: 30%;
+    background-color: rgb(172, 171, 170);
    /* color: white;
     background-color: black;*/
 }
 
 .text_2 {
     /*color: white;*/
+    background-color: rgb(172, 171, 170);
 }
 
-.spans {
-    /*background-color: black;*/
-}
 
 footer {
     text-align: center;
     color: aliceblue;
+    background-color: rgb(172, 171, 170);
 }
 
 a:visited {
@@ -92,13 +124,14 @@ a:visited {
     height: 15px;
     text-align: center;
     border-radius: 25%;
+    background-color: rgb(205, 207, 207);
     /*background-color: antiquewhite;*/
 }
 
 .btn {
     width: 70px;
     height: 30px;
-    background-color: rgb(164, 173, 173);
+    background-color: rgb(205, 207, 207);
 }
 
 .enjoy {
