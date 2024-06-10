@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterMindGame</title>
+    <link rel="stylesheet" href="styles/mindgame.css">
+</head>
+
+<body>
+    <header>
+        <p class="ins"> A new <span class="ccg"> <a class="ccg" target="_blank"
+                    href="https://beinsciences.org/compilcourtensaa/">Compil'Court</a></span> game<br> with a new
+            concept
+        </p>
+    </header>
+    <main>
+        <br>
+        <div class="contain_colors">
+            <input class=" clrs" style="color:black; background-color: peachpuff;" disabled>
+            <input class="clrs" style="color:black; background-color: rgba(255, 255, 0, 0.69);" disabled>
+            <input class=" clrs" style="color:whitesmoke; background-color: green;" disabled ">
+            <input class=" clrs" style="color:whitesmoke; background-color: blue;" disabled>
+            <input class="clrs" style="color:whitesmoke; background-color: purple;" disabled>
+            <input class="clrs" style="color:whitesmoke; background-color: red;" disabled ">
+        </div>
+        <br>
+        <br>
+        <p class=" text_1"> Going with only numbers,<br>
+            <span class="spans" style="color: red;">1 : red</span><br>
+            <span class="spans" style="color: green;"> 2 : green</span><br>
+            <span class="spans" style="color: peachpuff;"> 3 : peachpuff</span><br>
+            <span class="spans" style="color: rgba(255, 255, 0, 0.69);"> 4 : yellow </span><br>
+            <span class="spans" style="color: blue;"> 5 : blue </span><br>
+            <span class="spans" style="color: purple;"> 6 : purple</span><br>
+            </p>
+            <br>
+            <p class="text_2"><br>
+                The program generates a random position of 4 colors <span class="span">that may be
+                    repeated</span> from the
+                6
+                ones
+                above<br>
+                And you will have to find out the colors and their positions.<br>
+                <br>Everything else will be shown in an alert window.
+            </p>
+            <br>
+            <br>
+            <div class="contain_numbers">
+                <input type="number" min="1" max="6" class="clr" id="clc1" value="1">
+                <input type="number" min="1" max="6" class="clr" id="clc2" value="1">
+                <input type="number" min="1" max="6" id="clc3" class="clr" value="1">
+                <input type="number" min="1" max="6" id="clc4" class="clr" value="1">
+                <br>
+                <br>
+                <button class="btn" onclick="indication()">Indication</button>
+                <button class="btn" onclick="check();">Evaluate</button>
+                <button class="btn" onclick="location.reload()">Reload</button>
+                <br> <br> <br>
+                <p onclick="enjoy()" class="enjoy">ENJOY</p>
+                <br>
+    </main>
+    <script src="scripts/mindgame.js"></script>
+    <footer>
+        &copy;2022 <span onclick="show();">
+            #AAH
+        </span>. <a class="compil" target="_blank" href="https://beinsciences.org/compilcourtensaa/">Compil'Court.</a>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+
+.ins,
+.contain_colors,
+.text_1,
+.text_2,
+.contain_numbers,
+.btn {
+    text-align: center;
+}
+
+.btn {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(164, 173, 173);
+}
+
+.ins {
+    padding-top: 3%;
+    color: white;
+    font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.clrs {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.text_1,
+.text_2 {
+    font-size: large;
+}
+
+footer {
+    text-align: center;
+    color: aliceblue;
+}
+
+.text_1 {
+    margin-left: 30%;
+    margin-right: 30%;
+    color: white;
+    background-color: black;
+}
+
+.text_2 {
+    color: white;
+}
+
+.spans {
+    background-color: black;
+
+}
+
+a:visited {
+    color: blue;
+    text-decoration: dashed;
+}
+
+.clr {
+    width: 40px;
+    height: 15px;
+    text-align: center;
+    border-radius: 25%;
+    background-color: antiquewhite;
+}
+
+.enjoy {
+    color: antiquewhite;
+}
+
+.ccg {
+    color: blue;
+
+}
