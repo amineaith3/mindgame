@@ -6,16 +6,16 @@ const R4 = Math.floor(Math.random() * 6) + 1;
 var conteur = 0;
 
 function indication() {
-    alert('The reload button, generates a new set or colors. ' +
+    window.alert('The reload button, generates a new set or colors. ' +
         ' The evaluate button, tells you somehow, how much close you are to win.');
-    alert('You can start by some random numbers and press the -evaluate- button.' +
+    window.alert('You can start by some random numbers and press the -evaluate- button.' +
         ' It will tell you how many of your suggested colors are correct. ' +
         ' Using this info is what will guide you to win the game.');
-    alert('The game ends when you know the exact position of the colors generated');
+    window.alert('The game ends when you know the exact position of the colors generated');
 }
 
 function enjoy() {
-    alert('enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy');
+    window.alert('enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy');
 }
 function check() {
     const a1 = R1, a2 = R2, a3 = R3, a4 = R4;
@@ -176,13 +176,13 @@ function check() {
         somme_color = somme_color + count_number_color[i];
     }
     conteur++;
-    alert("you got " + somme_color + " right colors");
-    alert("you got " + verify + " colors in the right place");
+    window.alert("you got " + somme_color + " right colors");
+    window.alert("you got " + verify + " colors in the right place");
     if (verify == 4) {
-        alert("bingo, you got it right !! It took you " + conteur + " tries. " + ' You could have done it in less tries, try again.');
+        window.alert("bingo, you got it right !! It took you " + conteur + " tries. " + ' You could have done it in less tries, try again.');
     }
 }
 
 function show() {
-    alert('the numbers are ' + R1 + ' and ' + R2 + ' and ' + R3 + ' and ' + R4);
+    window.alert('the numbers are ' + R1 + ' and ' + R2 + ' and ' + R3 + ' and ' + R4);
 }
