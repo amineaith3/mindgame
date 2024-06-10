@@ -21,7 +21,7 @@ function indication() {
     showText('The reload button, generates a new set or colors. ' +
         ' The evaluate button, tells you somehow, how much close you are to win.' + 'You can start by some random numbers and press the -evaluate- button.' +
         ' It will tell you how many of your suggested colors are correct. ' +
-        ' Using this info is what will guide you to win the game.' + 'The game ends when you know the exact position of the colors generated', 30000);
+        ' Using this info is what will guide you to win the game.' + 'The game ends when you know the exact position of the colors generated', 20000);
 }
 
 
