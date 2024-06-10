@@ -135,9 +135,14 @@ a:visited {
 }
 
 .enjoy {
-    /*color: antiquewhite;*/
+    color: white
 }
 
+.compil{
+    color: white;
+    font-style: italic;
+    text-decoration: none; /* Remove underline */
+}
 .ccg {
     color: blue;
 }
