@@ -5,18 +5,27 @@ const R3 = Math.floor(Math.random() * 6) + 1;
 const R4 = Math.floor(Math.random() * 6) + 1;
 var conteur = 0;
 
-function indication() {
-    window.alert('The reload button, generates a new set or colors. ' +
-        ' The evaluate button, tells you somehow, how much close you are to win.');
-    window.alert('You can start by some random numbers and press the -evaluate- button.' +
-        ' It will tell you how many of your suggested colors are correct. ' +
-        ' Using this info is what will guide you to win the game.');
-    window.alert('The game ends when you know the exact position of the colors generated');
+function showText(text, duration) {
+    const messageContainer = document.getElementById('message-container');
+    const messageElement = document.createElement('div');
+    messageElement.textContent = text;
+    messageElement.classList.add('message');
+    messageContainer.appendChild(messageElement);
+
+    setTimeout(function() {
+        messageElement.style.display = 'none';
+    }, duration);
 }
 
-function enjoy() {
-    window.alert('enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy enjoy');
+function indication() {
+    showText('The reload button, generates a new set or colors. ' +
+        ' The evaluate button, tells you somehow, how much close you are to win.' + 'You can start by some random numbers and press the -evaluate- button.' +
+        ' It will tell you how many of your suggested colors are correct. ' +
+        ' Using this info is what will guide you to win the game.' + 'The game ends when you know the exact position of the colors generated', 30000);
 }
+
+
+
 function check() {
     const a1 = R1, a2 = R2, a3 = R3, a4 = R4;
     const true_value = [a1, a2, a3, a4];
@@ -176,11 +185,13 @@ function check() {
         somme_color = somme_color + count_number_color[i];
     }
     conteur++;
-    window.alert("you got " + somme_color + " right colors");
-    window.alert("you got " + verify + " colors in the right place");
+    
+    
+    showText("you got " + somme_color + " right colors" + " you got " + verify + " colors in the right place", 5000);
     if (verify == 4) {
-        window.alert("bingo, you got it right !! It took you " + conteur + " tries. " + ' You could have done it in less tries, try again.');
+        showText("bingo, you got it right !! It took you " + conteur + " tries. " + ' You could have done it in less tries, try again.', 5000);
     }
+    
 }
 
 function show() {

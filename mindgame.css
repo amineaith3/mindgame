@@ -134,10 +134,6 @@ a:visited {
     background-color: rgb(205, 207, 207);
 }
 
-.enjoy {
-    color: white
-}
-
 .compil{
     color: white;
     font-style: italic;
@@ -146,3 +142,16 @@ a:visited {
 .ccg {
     color: blue;
 }
+
+/* Your existing CSS */
+
+.message {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
