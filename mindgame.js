@@ -1,199 +1,106 @@
+// Random colors
+const R = [
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1
+];
 
-const R1 = Math.floor(Math.random() * 6) + 1;
-const R2 = Math.floor(Math.random() * 6) + 1;
-const R3 = Math.floor(Math.random() * 6) + 1;
-const R4 = Math.floor(Math.random() * 6) + 1;
-var conteur = 0;
+let attempts = 0;
 
+// Color mapping (for input backgrounds)
+const colorMap = {
+    1: { bg: "red", text: "whitesmoke" },
+    2: { bg: "green", text: "whitesmoke" },
+    3: { bg: "peachpuff", text: "black" },
+    4: { bg: "rgba(255, 255, 0, 0.69)", text: "black" },
+    5: { bg: "blue", text: "whitesmoke" },
+    6: { bg: "purple", text: "whitesmoke" }
+};
+
+// Reusable message function
 function showText(text, duration) {
-    const messageContainer = document.getElementById('message-container');
-    const messageElement = document.createElement('div');
-    messageElement.textContent = text;
-    messageElement.classList.add('message');
-    messageContainer.appendChild(messageElement);
+    const container = document.getElementById('message-container');
+    const msg = document.createElement('div');
+    msg.textContent = text;
+    msg.className = "bg-black/80 text-white px-4 py-2 rounded mt-2";
+    container.appendChild(msg);
 
-    setTimeout(function() {
-        messageElement.style.display = 'none';
-    }, duration);
+    setTimeout(() => msg.remove(), duration);
 }
 
 function indication() {
-    showText('The reload button, generates a new set or colors. ' +
-        ' The evaluate button, tells you somehow, how much close you are to win.' + 'You can start by some random numbers and press the -evaluate- button.' +
-        ' It will tell you how many of your suggested colors are correct. ' +
-        ' Using this info is what will guide you to win the game.' + 'The game ends when you know the exact position of the colors generated', 20000);
+    showText(
+        'The reload button generates new colors. ' +
+        'The evaluate button tells you how close you are. ' +
+        'Start with any numbers and press evaluate. ' +
+        'It tells how many colors are correct and how many are in the right place. ' +
+        'Game ends when all positions are correct.',
+        20000
+    );
 }
 
+function applyColorStyles(id, value) {
+    const el = document.getElementById(id);
 
+    if (colorMap[value]) {
+        el.style.backgroundColor = colorMap[value].bg;
+        el.style.color = colorMap[value].text;
+    } else {
+        el.style.backgroundColor = "white";
+        el.style.color = "black";
+    }
+}
 
 function check() {
-    const a1 = R1, a2 = R2, a3 = R3, a4 = R4;
-    const true_value = [a1, a2, a3, a4];
-    const cell1 = Number(document.getElementById("clc1").value);
-    const cell2 = Number(document.getElementById("clc2").value);
-    const cell3 = Number(document.getElementById("clc3").value);
-    const cell4 = Number(document.getElementById("clc4").value);
-    const current_value = [cell1, cell2, cell3, cell4];
-    var count_number_color = [0, 0, 0, 0];
-    var somme_color = 0;
-    var verify = 0;
-    var p = [-1, -1, -1, -1];
-    var colors = [document.getElementById("clc1").value, document.getElementById("clc2").value, document.getElementById("clc3").value, document.getElementById("clc4").value];
-    switch (colors[0]) {
-        case '1':
-            document.getElementById("clc1").style.backgroundColor = "red";
-            document.getElementById("clc1").style.color = "whitesmoke";
-            break;
-        case '2':
-            document.getElementById("clc1").style.backgroundColor = "green";
-            document.getElementById("clc1").style.color = "whitesmoke";
-            break;
-        case '3':
-            document.getElementById("clc1").style.backgroundColor = "peachpuff";
-            document.getElementById("clc1").style.color = "black";
-            break;
-        case '4':
-            document.getElementById("clc1").style.backgroundColor = "rgba(255, 255, 0, 0.69)";
-            document.getElementById("clc1").style.color = "black";
-            break;
-        case '5':
-            document.getElementById("clc1").style.backgroundColor = "blue";
-            document.getElementById("clc1").style.color = "whitesmoke";
-            break;
-        case '6':
-            document.getElementById("clc1").style.backgroundColor = "purple";
-            document.getElementById("clc1").style.color = "whitesmoke";
-            break;
-        default:
-            document.getElementById("clc1").style.backgroundColor = "white";
-            document.getElementById("clc1").style.color = "black";
-            break
-    }
+    const inp = [
+        Number(document.getElementById("clc1").value),
+        Number(document.getElementById("clc2").value),
+        Number(document.getElementById("clc3").value),
+        Number(document.getElementById("clc4").value)
+    ];
 
-    switch (colors[1]) {
-        case '1':
-            document.getElementById("clc2").style.backgroundColor = "red";
-            document.getElementById("clc2").style.color = "whitesmoke";
-            break;
-        case '2':
-            document.getElementById("clc2").style.backgroundColor = "green";
-            document.getElementById("clc2").style.color = "whitesmoke";
-            break;
-        case '3':
-            document.getElementById("clc2").style.backgroundColor = "peachpuff";
-            document.getElementById("clc2").style.color = "black";
-            break;
-        case '4':
-            document.getElementById("clc2").style.backgroundColor = "rgba(255, 255, 0, 0.69)";
-            document.getElementById("clc2").style.color = "black";
-            break;
-        case '5':
-            document.getElementById("clc2").style.backgroundColor = "blue";
-            document.getElementById("clc2").style.color = "whitesmoke";
-            break;
-        case '6':
-            document.getElementById("clc2").style.backgroundColor = "purple";
-            document.getElementById("clc2").style.color = "whitesmoke";
-            break;
-        default:
-            document.getElementById("clc2").style.backgroundColor = "white";
-            document.getElementById("clc2").style.color = "black";
-            break
-    }
+    // Apply colors to inputs
+    applyColorStyles("clc1", inp[0]);
+    applyColorStyles("clc2", inp[1]);
+    applyColorStyles("clc3", inp[2]);
+    applyColorStyles("clc4", inp[3]);
 
-    switch (colors[2]) {
-        case '1':
-            document.getElementById("clc3").style.backgroundColor = "red";
-            document.getElementById("clc3").style.color = "whitesmoke";
-            break;
-        case '2':
-            document.getElementById("clc3").style.backgroundColor = "green";
-            document.getElementById("clc3").style.color = "whitesmoke";
-            break;
-        case '3':
-            document.getElementById("clc3").style.backgroundColor = "peachpuff";
-            document.getElementById("clc3").style.color = "black";
-            break;
-        case '4':
-            document.getElementById("clc3").style.backgroundColor = "rgba(255, 255, 0, 0.69)";
-            document.getElementById("clc3").style.color = "black";
-            break;
-        case '5':
-            document.getElementById("clc3").style.backgroundColor = "blue";
-            document.getElementById("clc3").style.color = "whitesmoke";
-            break;
-        case '6':
-            document.getElementById("clc3").style.backgroundColor = "purple";
-            document.getElementById("clc3").style.color = "whitesmoke";
-            break;
-        default:
-            document.getElementById("clc3").style.backgroundColor = "white";
-            document.getElementById("clc3").style.color = "black";
-            break
-    }
-
-    switch (colors[3]) {
-        case '1':
-            document.getElementById("clc4").style.backgroundColor = "red";
-            document.getElementById("clc4").style.color = "whitesmoke";
-            break;
-        case '2':
-            document.getElementById("clc4").style.backgroundColor = "green";
-            document.getElementById("clc4").style.color = "whitesmoke";
-            break;
-        case '3':
-            document.getElementById("clc4").style.backgroundColor = "peachpuff";
-            document.getElementById("clc4").style.color = "black";
-            break;
-        case '4':
-            document.getElementById("clc4").style.backgroundColor = "rgba(255, 255, 0, 0.69)";
-            document.getElementById("clc4").style.color = "black";
-            break;
-        case '5':
-            document.getElementById("clc4").style.backgroundColor = "blue";
-            document.getElementById("clc4").style.color = "whitesmoke";
-            break;
-        case '6':
-            document.getElementById("clc4").style.backgroundColor = "purple";
-            document.getElementById("clc4").style.color = "whitesmoke";
-            break;
-        default:
-            document.getElementById("clc4").style.backgroundColor = "white";
-            document.getElementById("clc4").style.color = "black";
-            break
-    }
-
+    // Count how many correct colors (ignoring position)
+    let used = [false, false, false, false];
+    let correctColors = 0;
 
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
-            if (j != p[j]) {
-                if (true_value[i] == current_value[j]) {
-                    count_number_color[i]++;
-                    p[j] = j;
-                    break;
-                }
+            if (!used[j] && R[i] === inp[j]) {
+                used[j] = true;
+                correctColors++;
+                break;
             }
         }
     }
 
+    // Count correct positions
+    let correctPositions = 0;
     for (let i = 0; i < 4; i++) {
-        if (current_value[i] == true_value[i]) {
-            verify++;
-        }
+        if (inp[i] === R[i]) correctPositions++;
     }
-    for (let i = 0; i < 4; i++) {
-        somme_color = somme_color + count_number_color[i];
+
+    attempts++;
+
+    showText(
+        `You got ${correctColors} correct colors and ${correctPositions} in the right position.`,
+        5000
+    );
+
+    if (correctPositions === 4) {
+        showText(
+            `Bingo! You solved it in ${attempts} tries. Try again to beat your score!`,
+            5000
+        );
     }
-    conteur++;
-    
-    
-    showText("you got " + somme_color + " right colors" + " you got " + verify + " colors in the right place", 5000);
-    if (verify == 4) {
-        showText("bingo, you got it right !! It took you " + conteur + " tries. " + ' You could have done it in less tries, try again.', 5000);
-    }
-    
 }
 
 function show() {
-    window.alert('the numbers are ' + R1 + ' and ' + R2 + ' and ' + R3 + ' and ' + R4);
+    alert(`The numbers are ${R.join(" , ")}`);
 }
