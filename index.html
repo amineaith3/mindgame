@@ -6,62 +6,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MasterMindGame</title>
-    <link rel="stylesheet" href="mindgame.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header>
-        <p class="ins"> A new game<br> with a new concept</p>
-    </header>
-    <main>
-        <br>
-        <div class="contain_colors">
-            <input class="clrs clr-red" disabled>
-            <input class="clrs clr-green" disabled>
-            <input class="clrs clr-peachpuff" disabled>
-            <input class="clrs clr-yellow" disabled>
-            <input class="clrs clr-blue" disabled>
-            <input class="clrs clr-purple" disabled>
-        </div>
-        <br>
-        <br>
-        <p class="text_1"> Going with only numbers,<br>
-            <span class="spans back-red">1 : red</span><br>
-            <span class="spans back-green"> 2 : green</span><br>
-            <span class="spans back-peachpuff"> 3 : peachpuff</span><br>
-            <span class="spans back-yellow"> 4 : yellow </span><br>
-            <span class="spans back-blue"> 5 : blue </span><br>
-            <span class="spans back-purple"> 6 : purple</span><br>
-        </p>
-        <br>
-        <p class="text_2"><br>
-            The program generates a random position of 4 colors <span class="span">that may be repeated</span> from the
-            6 ones above<br>
-            And you will have to find out the colors and their positions.<br>
-            <br>Everything else will be shown in an alert window.
-        </p>
-        <br>
-        <br>
-        <div class="contain_numbers">
-            <input type="number" min="1" max="6" class="clr" id="clc1" value="1">
-            <input type="number" min="1" max="6" class="clr" id="clc2" value="1">
-            <input type="number" min="1" max="6" id="clc3" class="clr" value="1">
-            <input type="number" min="1" max="6" id="clc4" class="clr" value="1">
-            <br>
-            <br>
-            <button class="btn" onclick="indication()">Indication</button>
-            <button class="btn" onclick="check();">Evaluate</button>
-            <button class="btn" onclick="location.reload()">Reload</button>
-            <br>
-            <br>
+<body class="bg-gray-400 min-h-screen flex flex-col">
 
-    <div id="message-container"></div>
+    <!-- HEADER -->
+    <header class="text-center pt-10">
+        <p class="text-2xl font-semibold">
+            A new game<br> with a new concept
+        </p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="mt-6 flex flex-col items-center">
+
+        <!-- COLOR CIRCLES -->
+        <div class="flex gap-4 mt-4">
+            <div class="w-8 h-8 rounded-full bg-red-600"></div>
+            <div class="w-8 h-8 rounded-full bg-green-600"></div>
+            <div class="w-8 h-8 rounded-full bg-[peachpuff]"></div>
+            <div class="w-8 h-8 rounded-full bg-yellow-300"></div>
+            <div class="w-8 h-8 rounded-full bg-blue-600"></div>
+            <div class="w-8 h-8 rounded-full bg-purple-700"></div>
+        </div>
+
+        <!-- COLOR LEGEND -->
+        <div class="text-center text-lg mt-8 space-y-1">
+            <p>Going with only numbers,</p>
+            <p><span class="text-red-600">1 : red</span></p>
+            <p><span class="text-green-600">2 : green</span></p>
+            <p><span class="text-[peachpuff]">3 : peachpuff</span></p>
+            <p><span class="text-yellow-300">4 : yellow</span></p>
+            <p><span class="text-blue-600">5 : blue</span></p>
+            <p><span class="text-purple-700">6 : purple</span></p>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <p class="text-center text-lg mt-8 px-10 max-w-xl">
+            The program generates a random position of 4 colors <span class="font-semibold">that may be repeated</span>
+            from the 6 ones above.<br>
+            And you will have to find out the colors and their positions.
+            <br><br>
+            Everything else will be shown in an alert window.
+        </p>
+
+        <!-- INPUTS -->
+        <div class="flex gap-4 mt-10">
+            <input type="number" min="1" max="6" id="clc1"
+                class="w-12 h-8 text-center rounded bg-gray-200" value="1">
+            <input type="number" min="1" max="6" id="clc2"
+                class="w-12 h-8 text-center rounded bg-gray-200" value="1">
+            <input type="number" min="1" max="6" id="clc3"
+                class="w-12 h-8 text-center rounded bg-gray-200" value="1">
+            <input type="number" min="1" max="6" id="clc4"
+                class="w-12 h-8 text-center rounded bg-gray-200" value="1">
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex gap-4 mt-8">
+            <button onclick="indication()"
+                class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-200">Indication</button>
+
+            <button onclick="check();"
+                class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-200">Evaluate</button>
+
+            <button onclick="location.reload()"
+                class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-200">Reload</button>
+        </div>
+
+        <!-- MESSAGE CONTAINER -->
+        <div id="message-container" class="mt-6 w-full flex flex-col items-center"></div>
+
     </main>
-    <script src="mindgame.js"></script>
-    <footer>
-         <span onclick="show();">&copy;2024</span>. <a class="compil" target="_blank" href="https://amineaithamma.vercel.app">Amine Ait Hamma</a>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-auto py-4 text-white bg-gray-400">
+        <span onclick="show();" class="cursor-pointer">&copy;2024</span>.
+        <a class="italic text-white" target="_blank" href="https://amineaithamma.vercel.app">Amine Ait Hamma</a>
     </footer>
 
+    <script src="mindgame.js"></script>
 </body>
 
 </html>
